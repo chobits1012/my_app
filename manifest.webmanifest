@@ -1,9 +1,3 @@
-manifest.webmanifest
-
-按 Enter。
-
-在這個新檔案裡貼上這段內容（可以先不用改）：
-
 {
 "name": "Kansai Trip 2026",
 "short_name": "KansaiTrip",
