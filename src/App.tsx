@@ -49,26 +49,7 @@ const App: React.FC = () => {
         style={{ backgroundImage: `url('${HERO_IMAGE}')` }}
       />
 
-      {/* 假啟動畫面：覆蓋在最上層，2 秒後淡出 */}
-      <div
-        className={`
-          pointer-events-none
-          absolute inset-0 z-30
-          flex items-center justify-center
-          bg-black/40
-          transition-opacity duration-[2000ms]
-          ${showSplash ? 'opacity-100' : 'opacity-0'}
-        `}
-      >
-        <div className="flex flex-col items-center text-white">
-          <span className="text-sm tracking-[0.4em] uppercase mb-3">2026 Winter</span>
-          <h1 className="text-3xl md:text-5xl font-serif font-bold tracking-widest text-center mb-3">
-            關西冬之旅
-          </h1>
-          <div className="w-16 h-1 bg-japan-red rounded-full mb-4"></div>
-          <p className="text-xs text-white/80">Loading itinerary...</p>
-        </div>
-      </div>
+
 
       {/* 顏色漸層疊層 */}
       <div
