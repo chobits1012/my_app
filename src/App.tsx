@@ -56,7 +56,7 @@ const App: React.FC = () => {
           absolute inset-0 z-30
           flex items-center justify-center
           bg-black/40
-          transition-opacity duration-700
+          transition-opacity duration-[2000ms]
           ${showSplash ? 'opacity-100' : 'opacity-0'}
         `}
       >
