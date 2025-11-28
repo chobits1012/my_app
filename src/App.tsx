@@ -6,12 +6,14 @@ import DetailPanel from './components/DetailModal';
 
 const App: React.FC = () => {
   const [selectedDayIndex, setSelectedDayIndex] = useState<number | null>(null);
-  const [showSplash, setShowSplash] = useState(true); // 假啟動畫面
+
+  // 中間 logo 假啟動畫面
+  const [showSplash, setShowSplash] = useState(true);
 
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowSplash(false);
-    }, 2000); // 停留 2 秒
+    }, 1200); // 顯示約 1.2 秒
     return () => clearTimeout(timer);
   }, []);
 
@@ -49,7 +51,34 @@ const App: React.FC = () => {
         style={{ backgroundImage: `url('${HERO_IMAGE}')` }}
       />
 
-
+      {/* 中間 logo 假啟動畫面 */}
+      <div
+        className={`
+          pointer-events-none
+          absolute inset-0 z-30
+          flex items-center justify-center
+          bg-black/70
+          transition-opacity duration-[800ms]
+          ${showSplash ? 'opacity-100' : 'opacity-0'}
+        `}
+      >
+        <div className="flex flex-col items-center gap-4">
+          {/* 圓形 logo 區塊 */}
+          <div className="w-24 h-24 md:w-28 md:h-28 rounded-full border border-white/40 bg-white/5 flex items-center justify-center shadow-xl">
+            <span className="text-xl md:text-2xl font-serif font-bold tracking-[0.2em] text-white">
+              KIX
+            </span>
+          </div>
+          <div className="flex flex-col items-center text-white">
+            <span className="text-[10px] tracking-[0.4em] uppercase mb-1 text-white/70">
+              2026 Winter
+            </span>
+            <h1 className="text-xl md:text-2xl font-serif font-semibold tracking-[0.3em]">
+              關西冬之旅
+            </h1>
+          </div>
+        </div>
+      </div>
 
       {/* 顏色漸層疊層 */}
       <div
